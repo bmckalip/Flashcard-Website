@@ -1,0 +1,28 @@
+FlashCard Project Presentations 6/15/2017
+
+As a user I can login and logout
+As a user I can view an about me page
+		-name, major, university/college, some info about me
+As a user I can view a page about my favorite websites (Optional)
+
+As a user I can interact with Flashcards to practice my skills
+As a user I can view one flashcard at a time, viewing the question only
+		and interact with the webpage to make the answer visibile
+As a user I am notified when I have gone through all the flashcards and
+		have the option to start over
+
+Minimum 10 FlashCards
+Must use http://myjson.com for login verification using AJAX
+
+Bonus: 
+	Use JSON & AJAX to receive flash card sets
+	Multiple Flash Card sets to choose from
+	Allow user to type in the answer and verify if it is correct
+	Registration page with JavaScript
+
+Technologies Required:
+HTML
+CSS/Bootstrap
+JavaScript
+AJAX
+http://myjson.com
