@@ -10,7 +10,7 @@ window.onload = function(){
 
 function resetButton(){
 	var login = document.getElementById("login");
-	login.setAttribute("class", "btn btn-md btn-primary center-block");
+	login.setAttribute("class", "btn btn-lg btn-primary center-block");
 	login.innerHTML = ("Login");
 }
 
@@ -34,7 +34,7 @@ function displayLabel(response){
 	if(isValidCredentials(response)){
 		window.location.replace("./flashcards.html");
 	}else{
-		login.setAttribute("class", "btn btn-md btn-danger center-block");
+		login.setAttribute("class", "btn btn-lg btn-danger center-block");
 		login.innerHTML = "Invalid Credentials";
 		document.getElementById("passwordInput").value = "";
 	}
