@@ -1,9 +1,20 @@
 /**/
 window.onload = function(){
-	document.getElementById("login").addEventListener("click", updateLabel);
+	//reset button when either input is focused
+	document.getElementById("usernameInput").addEventListener("focus", resetButton);
+	document.getElementById("passwordInput").addEventListener("focus", resetButton);
+	
+	//conditionally color button when it's is clicked
+	document.getElementById("login").addEventListener("click", updateButton);
 }
 
-function updateLabel(){
+function resetButton(){
+	var login = document.getElementById("login");
+	login.setAttribute("class", "btn btn-md btn-primary center-block");
+	login.innerHTML = ("Login");
+}
+
+function updateButton(){
 	var xhr = new XMLHttpRequest();
 	url = "https://api.myjson.com/bins/f19dn"
 	xhr.open("GET", url);
@@ -21,13 +32,11 @@ function updateLabel(){
 function displayLabel(response){
 	var login = document.getElementById("login");
 	if(isValidCredentials(response)){
-		login.setAttribute("class", "btn btn-md btn-success center-block");
-		login.innerHTML = "Logging in";
 		window.location.replace("./flashcards.html");
-		
 	}else{
-		login.setAttribute("class", "btn btn-md btn-warning center-block");
+		login.setAttribute("class", "btn btn-md btn-danger center-block");
 		login.innerHTML = "Invalid Credentials";
+		document.getElementById("passwordInput").value = "";
 	}
 }
 
