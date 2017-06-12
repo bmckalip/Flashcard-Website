@@ -1,0 +1,68 @@
+html{
+	font-family:Roboto
+}
+
+body{
+	background-image: url("../res/udyr.jpg");
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+
+.page-header{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align:center;
+	margin: 0px;
+	background-color: #6095df;
+	font-size: 36px;
+	color: white;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+input{
+	width: 60%;
+ 	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 3px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	font-size: 16px;
+}
+
+.jumbotron {
+	padding: 0px;
+	width: 500px;
+}
+
+.vertical-center {
+	min-height: 100%;   /* Fallback for browsers do NOT support vh unit */
+	min-height: 100vh;  /* These two lines are counted as one :-)       */
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn{
+	width: 60%;
+}
+
+.jumbotron{
+	border-radius: 15px;
+	margin-bottom: 0px;
+}
+
+
+
+
+
+/* #loginBoxBody:focus{ */
+  /* position: relative; margin-top: 40px; */
+  /* animation-name: slide-down; animation-duration: 1s; */
+/* } */
+
+/* @keyframes slide-down { */
+  /* from { margin-top: 0px; } to { margin-top: 100px; } */
+/* } */
+

@@ -26,3 +26,5 @@ CSS/Bootstrap
 JavaScript
 AJAX
 http://myjson.com
+
+login info: https://api.myjson.com/bins/f19dn
