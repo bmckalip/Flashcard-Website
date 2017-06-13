@@ -8,6 +8,9 @@
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		
+		<!-- Jquery Flip library -->
+		<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+		
 		<!-- Bootstrap -->
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -59,20 +62,17 @@
 						<div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
 					</div>
 					
-				<div class="row text-center">
-					<div id="prevCard" class="col-xs-2 vertical-center"><span class="glyphicon glyphicon-chevron-left"></span></div>
-					<div id="cardContent" class="col-xs-8">
-						<div id="cardHead" class="cardHead">Question</div>
-						<div id="cardBody" class="cardBody text-center">Question Text</div>
-						<div id="cardFooter" class="text-center">
-							<button id="flipBtn" class="btn btn-primary btn-lg" role="button">Flip <span class="glyphicon glyphicon-repeat"></span>ard</button>
-						</div>
+					<div class="row text-center">
+						<div id="prevCard" class="col-xs-2 vertical-center"><span class="glyphicon glyphicon-chevron-left"></span></div>
+							<div id="cardContent" class="col-xs-8">
+									<div id="cardHead" class="cardHead">Question</div>
+										<div class="cardBody text-center" id="cardBody"></div>
+							</div>
+						<div id="nextCard" class="col col-xs-2 vertical-center"><span class="glyphicon glyphicon-chevron-right"></span></div>
 					</div>
-					<div id="nextcard" class="col col-xs-2 vertical-center"><span class="glyphicon glyphicon-chevron-right"></span></div>
-				</div>
-				
-
-					
+					<div id="cardFooter" class="text-center">
+						<button id="flipBtn" class="btn btn-primary btn-lg" role="button">Flip <span class="glyphicon glyphicon-repeat"></span>ard</button>
+					</div>
 				</div>
 			</div>
 			
@@ -81,3 +81,15 @@
 		<script src="javascript/flashcards.js"></script>
 	</body>
 </html>
+
+<!-- backup of old cardcode -->
+<!-- <div id="cardContent" class="col-xs-8"> -->
+	<!-- <div id="cardHead" class="cardHead">Question</div> -->
+	<!-- <div class="cardBody" id="cardBody"> -->
+		<!-- <div id="cardBodyQuestion" class="text-center front">Front</div> -->
+		<!-- <div id="cardBodyAnswer" class="text-center back">Back</div> -->
+	<!-- </div> -->
+	<!-- <div id="cardFooter" class="text-center"> -->
+		<!-- <button id="flipBtn" class="btn btn-primary btn-lg" role="button">Flip <span class="glyphicon glyphicon-repeat"></span>ard</button> -->
+	<!-- </div> -->
+<!-- </div> -->

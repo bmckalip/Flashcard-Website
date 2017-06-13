@@ -1,4 +1,5 @@
 var sets = [];
+var currCardIndex;
 var xhr = new XMLHttpRequest();
 window.onload = function(){
 	loadSets();
@@ -11,16 +12,14 @@ function loadSets(){
 	}
 	
 	//chevron event listners
-	document.getElementById("").addEventListener("click", nextCard);
-	document.getElementById("").addEventListener("click", prevCard);
+	document.getElementById("prevCard").addEventListener("click", nextCard);
+	document.getElementById("nextCard").addEventListener("click", prevCard);
 	
-	//tab event listeners
-	for(){
-		document.getElementById("").addEventListener("click", nextCard);
-	}
-	document.getElementById("").addEventListener("click", nextCard);
-	document.getElementById("").addEventListener("click", nextCard);
-
+	//flip button
+	document.getElementById("flipBtn").addEventListener("click", flipCard);
+	
+	//tab event listeners TODO: this will fail if original request for sets takes > 1 second
+	setTimeout(addTabListeners, 1000);
 }
 
 function requestSet(url){
@@ -49,6 +48,34 @@ function addTab(cardSet){
 	newTab.appendChild(newLink);
 	
 	document.getElementById("sets").appendChild(newTab);
+}
+
+function addTabListeners(){
+	for(i in sets){
+		document.getElementById(sets[i].name).addEventListener("click", function(){currSet=set[i]; currCardIndex = 0; displaySet(sets[i].name, currCardIndex)});
+	}
+}
+
+function displaySet(setName, position){
+	var head = document.getElementById("cardHead").innerHTML;
+	var body = document.getElementById("cardBody").innerHTML;
+	loadCard(setName, position);
+}
+
+function nextCard(){
+	
+}
+
+function prevCard(){
+	
+}
+
+function loadCard(){
+	
+}
+
+function flipCard(){
+	console.log("flipping");
 }
 
 function setProgressBar(complete, total){
