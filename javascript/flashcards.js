@@ -9,6 +9,18 @@ function loadSets(){
 	for (i in urls){
 		requestSet(urls[i]);
 	}
+	
+	//chevron event listners
+	document.getElementById("").addEventListener("click", nextCard);
+	document.getElementById("").addEventListener("click", prevCard);
+	
+	//tab event listeners
+	for(){
+		document.getElementById("").addEventListener("click", nextCard);
+	}
+	document.getElementById("").addEventListener("click", nextCard);
+	document.getElementById("").addEventListener("click", nextCard);
+
 }
 
 function requestSet(url){

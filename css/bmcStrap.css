@@ -4,13 +4,13 @@ html{
 }
 
 body{
-	background-image: url("../res/udyr.jpg");
+	background-image: url("../res/blue-pattern.jpg");
 	background-repeat:no-repeat;
 	background-size: cover;
 }
 
 .container-fluid{
-	width: 60%;
+	width: 70%;
 	background-color: rgba(166, 206, 255, 0.5);
 	min-height: 100%;
 	min-height: 100vh;
