@@ -13,13 +13,11 @@ body{
 	width: 60%;
 	background-color: rgba(166, 206, 255, 0.5);
 	min-height: 100%;
-	min-height: 100%;
 	min-height: 100vh;
 }
 
 h1 {
-	border-bottom: 2px solid #ddd;
-	margin: 0px;
+	margin-top: 0px;
 }
 
 .jumbotron{
@@ -35,15 +33,125 @@ h1 {
 	border-bottom-right-radius: 10px;
 }
 
+.navbar-header a.navbar-brand{
+	font-family: 'Fjalla One', sans-serif;
+	font-size:20px;
+	color:#001961;
+	/* font-weight: bold; */
+	/* background-color: #e3edff; */
+	font-size: 35px;
+	/* margin-bottom:10px; */
+	padding-top: 12px;
+	padding-bottom: 53px;
+	border-right: 2px solid #ccc;
+}
+
+.navbar-header a.navbar-brand:hover{
+	color:#333;
+}
+
+.navbar-nav.navbar-left li a{
+	font-size:18px;
+	border-right: 1px solid #ccc;
+	color: #222;
+	padding-top: 22px;
+	padding-bottom: 23px;
+}
+
+.navbar-nav.navbar-right li a{
+	font-size:18px;
+	border-left: 1px solid #ccc;
+	background-color: #eee;
+	color: #222;
+	padding-top: 22px;
+	padding-bottom: 23px;
+}
+
+.navbar-nav.navbar-right li a:hover{
+	background-color: #e3edff;
+}
+
+.navbar-nav.navbar-left li a:hover{
+	background-color: #e3edff;
+}
+
 .nav-tabs{
-	/* background-color: #fff2a1; */
-	background-color: #ddd;
+	background-color: #0068bd;
+	padding: 10px;
+	padding-bottom: 1px;
+	padding-right: 2px;
+	border-bottom: 2px solid #eee;
 }
 
-a {
-	color: #333;
+ul.nav-tabs li a{ 
+	background-color: #eee;
+	color: #222;
+	font-size: 20px;
+	border: none;
+	margin-right: 5px;
+ }
+
+ul.nav-tabs li a:hover{
+	background-color: #e3edff;
+}
+ 
+/* .jumbotron ul#sets.nav.nav-tabs li.a:hover{ */
+	/* //background-color: #0068bd; */
+/* } */
+
+.vertical-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-li.a:hover{
-	background-color: blue;
+.col-xs-2{
+	height: 400px;
+	font-size: 50px;
+}
+
+.col-xs-8{
+	border: 2px solid #ddd;
+	border-radius: 30px;
+	height: 400px;
+	overflow:hidden;
+	padding: 0px;
+	background-color: #e3edff;
+}
+
+.cardContent{
+}
+
+.cardHead{
+	color: white;
+	background-color: #0068bd;
+	margin: 0px;
+	padding: 5px;
+	font-size: 40px;
+}
+
+.cardBody{
+	/* height: 100%; */
+	width: 100%;
+	padding: 20px;
+	font-size: 18px;
+	height:275px;
+	}
+
+.cardFooter{
+	height:46px;
+	
+}
+
+.row{
+	padding-top: 20px;
+}
+
+.glyphicon-repeat{
+	font-size: .78em;
+	padding-right: 1px;
+}
+
+.glyphicon-chevron-right:hover, .glyphicon-chevron-left:hover{
+	color:#999;
 }

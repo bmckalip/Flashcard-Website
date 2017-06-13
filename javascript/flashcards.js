@@ -1,9 +1,10 @@
 var sets = [];
+var xhr = new XMLHttpRequest();
 window.onload = function(){
-	loadTabs();
+	loadSets();
 }
 
-function loadTabs(){
+function loadSets(){
 	var urls = ["https://api.myjson.com/bins/gj9tn"];
 	for (i in urls){
 		requestSet(urls[i]);
@@ -11,7 +12,6 @@ function loadTabs(){
 }
 
 function requestSet(url){
-	var xhr = new XMLHttpRequest();
 	xhr.open("GET", url);
 	xhr.send();
 	xhr.onreadystatechange = function(){
@@ -37,4 +37,15 @@ function addTab(cardSet){
 	newTab.appendChild(newLink);
 	
 	document.getElementById("sets").appendChild(newTab);
+}
+
+function setProgressBar(complete, total){
+	var bar = document.getElementById("progressBar");
+	var percentage = complete / total;
+	//only add text value if it will "fit" (> 3% of the bar is filled)
+	if(percentage > 5){
+		bar.innerHTML = complete + "/" + total;
+	}
+	//set the width of bar
+	bar.setAttribute("style", "width: " + percentage + "%");
 }
