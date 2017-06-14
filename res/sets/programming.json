@@ -1,0 +1,25 @@
+{
+   "name":"Programming",
+   "cards":[
+      {
+         "question":"What are the Four Pillars of Object-Oriented Programming?",
+		 "answer":"Inheritance, Polymorphism, Encapsulation, and Abstraction"
+      },
+	  {
+         "question":"What is the difference between a POJO and a JavaBean?",
+		 "answer":"A POJO has no entry point and doesn’t not require state or behavior, a JavaBean i a POJO that requires state and behavior."
+      },
+	  {
+         "question":"In eclipse, how do we easily insert getters, setters, and  toSTring methods (among others)?",
+		 "answer":"Through the Source tab"
+      },
+	  {
+         "question":"What is type coercion?",
+		 "answer":"Automatic Conversion of datatypes to match before comparing (==)"
+      },
+	  {
+         "question":"What is garbage collection?",
+		 "answer":"Clearing objects in memory that no longer have a reference pointing to them."
+      }
+   ]
+}
