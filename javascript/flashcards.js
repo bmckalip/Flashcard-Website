@@ -2,6 +2,7 @@
 
 // locations of flashcard sets - add more urls to add more sets
 var urls = ["https://api.myjson.com/bins/r8wjf", "https://api.myjson.com/bins/iv4cb"];
+
 //locally loaded flashcard sets
 var sets = [];
 
