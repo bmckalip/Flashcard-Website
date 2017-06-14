@@ -18,13 +18,13 @@ added support for a dynamic number of sets
 flashcard layout/style
 
 what i did tusday night:
-Flashcards
-	cycling
-	reset
-	flipping
-Progress Bar
-About me page
-	layout/style
+	Flashcards
+		cycling
+		reset
+		flipping
+	Progress Bar
+	About me page
+		layout/style
 
 TODO webnesday night: (in order of importance)
 	About Me Page
@@ -39,3 +39,9 @@ TODO webnesday night: (in order of importance)
 		op.gg
 		riot api site
 			include a live request
+			
+BLOCKERS:
+	bug in addTabListeners():
+		BUG: passing the last element of set[i] to all called to loadCard instead of the correct elementFromPoint causes all tabs to load the same (last) set
+		ideas: something about passing the event e to the function and using that to determine which to load instead of passing the set
+
