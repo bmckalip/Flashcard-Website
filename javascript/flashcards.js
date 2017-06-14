@@ -32,6 +32,7 @@ function requestSet(url){
 			var cardSet = JSON.parse(xhr.responseText);
 			sets.push(cardSet);
 			addTab(cardSet);
+			
 		}
 	}
 }
@@ -51,6 +52,16 @@ function addTab(cardSet){
 	//nest elements
 	newTab.appendChild(newLink);
 	document.getElementById("sets").appendChild(newTab);
+	
+	//add event listener
+	document.getElementById(cardSet.name).addEventListener("click", 
+		function(){
+			currCardIndex = -1;
+			currSet = cardSet;
+			loadCard(cardSet, currCardIndex);
+		}
+	);
+	
 }
 
 function addListeners(){
@@ -65,35 +76,18 @@ function addListeners(){
 	document.getElementById("resetBtn").addEventListener("click", resetCardSet);
 	
 	//tab event listeners TODO: this will fail if original request for sets takes > 1 second
-	setTimeout(addTabListeners, 1500);
-}
-
-//BUG: passing the last element of set[i] to all called to loadCard instead of the correct elementFromPoint
-//causes all tabs to load the same (last) set
-//ideas: something about passing the event e to the function and using that to determine which to load instead of passing the set
-function addTabListeners(){
-	console.log(sets[i].name);
-	for(i in sets){
-		document.getElementById(sets[i].name).addEventListener("click", 
-			function(){
-				
-				currCardIndex = -1; 
-				loadCard(sets[i], currCardIndex);
-			}
-		);
-	}
+	//setTimeout(addTabListeners, 1500);
 }
 
 /* ------------ card DOM manipulation functions ---------------- */
 
-//
+
 function loadCard(set, position){
-	currSet = set;
+	//currSet = set;
 	// console.log("currSet: " + currSet.name + " set:" + set.name);
 	var head = document.getElementById("cardHead");
 	var body = document.getElementById("cardBody");
 	var card = set.cards[position];
-
 	//recolor the tab
 	colorTab(set);
 	
@@ -102,11 +96,11 @@ function loadCard(set, position){
 	
 	//-1 denotes the "title" card (before the first question)
 	if(position <= -1){
-		head.innerHTML = set.name;
-		body.innerHTML = "Press the next arrow to begin!"
+		head.innerHTML = "Begin " + set.name;
+		body.innerHTML = "Press the next arrow to begin"
 	}else if(position >= set.cards.length){
-		head.innerHTML = set.name;
-		body.innerHTML = "Press the Restart button to begin again!"
+		head.innerHTML = "Completed " + set.name;
+		body.innerHTML = "Press the Reset button to begin again"
 	}else{
 		head.innerHTML = "Question";
 		//type error can be raised if the button is clicked and there is no cardset loaded
@@ -119,7 +113,6 @@ function loadCard(set, position){
 function nextCard(){
 	//type error can be raised if the button is clicked and there is no cardset loaded
 	try{
-		console.log(currSet.name);
 		if(currCardIndex < currSet.cards.length){
 			currCardIndex++;
 			loadCard(currSet, currCardIndex);
