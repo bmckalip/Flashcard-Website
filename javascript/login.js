@@ -6,6 +6,21 @@ window.onload = function(){
 	
 	//conditionally color button when it's is clicked
 	document.getElementById("login").addEventListener("click", updateButton);
+	
+	//enter key
+	// document.getElementById('login').addEventListener("keyDown", function(e){
+        // var event = e || window.event;
+        // var charCode = event.which || event.keyCode;
+		// console.log("enter");
+        // if ( charCode == '13' ) {
+			
+            // // Enter pressed
+            // updateButton();
+            // return false;
+        // }
+    // }
+	// );
+	
 }
 
 function resetButton(){
