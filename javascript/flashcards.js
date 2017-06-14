@@ -1,7 +1,7 @@
 //globals
 
 // locations of flashcard sets - add more urls to add more sets
-var urls = ["https://api.myjson.com/bins/r8wjf"];
+var urls = ["https://api.myjson.com/bins/r8wjf", "https://api.myjson.com/bins/iv4cb"];
 //locally loaded flashcard sets
 var sets = [];
 
@@ -68,9 +68,18 @@ function addListeners(){
 	setTimeout(addTabListeners, 1000);
 }
 
+//BUG: passing the last element of set[i] to all called to loadCard instead of the correct elementFromPoint
+//causes all tabs to load the same (last) set
+//ideas: something about passing the event e to the function and using that to determine which to load instead of passing the set
 function addTabListeners(){
 	for(i in sets){
-		document.getElementById(sets[i].name).addEventListener("click", function(){currSet=sets[i]; currCardIndex = -1; loadCard(sets[i], currCardIndex)});
+		document.getElementById(sets[i].name).addEventListener("click", 
+			function(){
+				console.log(sets[i].name);
+				currCardIndex = -1; 
+				loadCard(sets[i], currCardIndex);
+			}
+		);
 	}
 }
 
@@ -78,10 +87,15 @@ function addTabListeners(){
 
 //
 function loadCard(set, position){
+	//currSet = set;
+	// console.log("currSet: " + currSet.name + " set:" + set.name);
 	var head = document.getElementById("cardHead");
 	var body = document.getElementById("cardBody");
 	var card = set.cards[position];
 
+	//recolor the tab
+	colorTab(set);
+	
 	//progress bar
 	setProgressBar((position + 1), set.cards.length);
 	
@@ -97,9 +111,7 @@ function loadCard(set, position){
 		//type error can be raised if the button is clicked and there is no cardset loaded
 		try{
 			body.innerHTML = card.question;
-		}catch(TypeError){
-			
-		}		
+		}catch(TypeError){}		
 	}
 }
 
@@ -162,4 +174,16 @@ function resetCardSet(){
 		setProgressBar((currCardIndex + 1), currSet.cards.length);
 		loadCard(currSet, currCardIndex)
 	}catch(TypeError){}
+}
+
+function colorTab(set){
+	for(var i in sets){
+		//type error can be raised if there are no sets
+		try{
+			document.getElementById(sets[i]).firstChild.setAttribute("style", "background-color:#eee;");
+		}catch(TypeError){
+			
+		}
+	}
+	document.getElementById(set.name).firstChild.setAttribute("style", "background-color:#e3edff;");
 }
