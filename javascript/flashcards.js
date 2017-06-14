@@ -1,29 +1,28 @@
+//globals
+
+// locations of flashcard sets - add more urls to add more sets
+var urls = ["https://api.myjson.com/bins/r8wjf"];
+//locally loaded flashcard sets
 var sets = [];
+
+//current loaded set information
 var currCardIndex;
 var currSet = {};
-var xhr = new XMLHttpRequest();
+
 window.onload = function(){
 	loadSets();
+	addListeners();
 }
 
 function loadSets(){
-	var urls = ["https://api.myjson.com/bins/r8wjf"];
+	//request all sets from each url
 	for (i in urls){
 		requestSet(urls[i]);
 	}
-	
-	//chevron event listners
-	document.getElementById("prevCard").addEventListener("click", prevCard);
-	document.getElementById("nextCard").addEventListener("click", nextCard);
-	
-	//flip button
-	document.getElementById("flipBtn").addEventListener("click", flipCard);
-	
-	//tab event listeners TODO: this will fail if original request for sets takes > 1 second
-	setTimeout(addTabListeners, 1000);
 }
 
 function requestSet(url){
+	var xhr = new XMLHttpRequest();
 	xhr.open("GET", url);
 	xhr.send();
 	xhr.onreadystatechange = function(){
@@ -41,33 +40,76 @@ function addTab(cardSet){
 	var newTab = document.createElement("li");
 	var newLink = document.createElement("a");
 	
+	//set attributes of outer element
 	newTab.setAttribute("role", "presentation");
 	newTab.setAttribute("id", cardSet.name);
 	
+	//set attributes of child element 
 	newLink.setAttribute("role", "button");
 	newLink.innerHTML = cardSet.name;
-	newTab.appendChild(newLink);
 	
+	//nest elements
+	newTab.appendChild(newLink);
 	document.getElementById("sets").appendChild(newTab);
+}
+
+function addListeners(){
+	//chevron event listners
+	document.getElementById("prevCard").addEventListener("click", prevCard);
+	document.getElementById("nextCard").addEventListener("click", nextCard);
+	
+	//flip button
+	document.getElementById("flipBtn").addEventListener("click", flipCard);
+	
+	//reset Button
+	document.getElementById("resetBtn").addEventListener("click", resetCardSet);
+	
+	//tab event listeners TODO: this will fail if original request for sets takes > 1 second
+	setTimeout(addTabListeners, 1000);
 }
 
 function addTabListeners(){
 	for(i in sets){
-		document.getElementById(sets[i].name).addEventListener("click", function(){currSet=sets[i]; currCardIndex = -1; displaySet(sets[i], currCardIndex)});
+		document.getElementById(sets[i].name).addEventListener("click", function(){currSet=sets[i]; currCardIndex = -1; loadCard(sets[i], currCardIndex)});
 	}
 }
 
-function displaySet(set, position){
-	loadCard(set, position);
+/* ------------ card DOM manipulation functions ---------------- */
+
+//
+function loadCard(set, position){
+	var head = document.getElementById("cardHead");
+	var body = document.getElementById("cardBody");
+	var card = set.cards[position];
+
+	//progress bar
+	setProgressBar((position + 1), set.cards.length);
+	
+	//-1 denotes the "title" card (before the first question)
+	if(position <= -1){
+		head.innerHTML = set.name;
+		body.innerHTML = "Press the next arrow to begin!"
+	}else if(position >= set.cards.length){
+		head.innerHTML = set.name;
+		body.innerHTML = "Press the Restart button to begin again!"
+	}else{
+		head.innerHTML = "Question";
+		//type error can be raised if the button is clicked and there is no cardset loaded
+		try{
+			body.innerHTML = card.question;
+		}catch(TypeError){
+			
+		}		
+	}
 }
 
 function nextCard(){
+	//type error can be raised if the button is clicked and there is no cardset loaded
 	try{
 		if(currCardIndex < currSet.cards.length){
 			currCardIndex++;
 			loadCard(currSet, currCardIndex);
 		}
-		console.log("next: " + currCardIndex + " / " + currSet.cards.length);
 	}catch(TypeError){}
 	
 }
@@ -77,47 +119,22 @@ function prevCard(){
 		currCardIndex--;
 		loadCard(currSet, currCardIndex);
 	}
-	console.log("prev: " + currCardIndex);
-}
-
-function loadCard(set, position){
-	var head = document.getElementById("cardHead");
-	var body = document.getElementById("cardBody");
-	var card = set.cards[position];
-	
-	console.log(card);
-	//progress bar
-	setProgressBar((position + 1), set.cards.length);
-	if(position <= -1){
-		head.innerHTML = set.name;
-		body.innerHTML = "Press the next arrow to begin!"
-	}else if(position >= set.cards.length){
-		head.innerHTML = set.name;
-		body.innerHTML = "Press the Restart button to begin again!"
-	}else{
-		head.innerHTML = "Question";
-		try{
-			body.innerHTML = card.question;
-		}catch(TypeError){
-			
-		}		
-	}
 }
 
 function flipCard(){
 	var head = document.getElementById("cardHead");
 	var body = document.getElementById("cardBody");
 	
+	//only load the card if within proper bounds (if it exists) to avoid IndexError
 	if(currCardIndex >= 0 && currCardIndex <= currSet.cards.length){
 		var card = currSet.cards[currCardIndex];
-		console.log("flipping");
 	}
+	
 	if(head.innerHTML.toLowerCase().includes("question")){
 		head.innerHTML = "Answer";
 		body.innerHTML = card.answer;
 	}else if(head.innerHTML.toLowerCase().includes("answer")){
 		head.innerHTML = "Question";
-		console.log(card);
 		body.innerHTML = card.question;
 	}
 
@@ -126,14 +143,23 @@ function flipCard(){
 function setProgressBar(complete, total){
 	var bar = document.getElementById("progressBar");
 	var percentage = complete / total * 100;
-	console.log(complete + " / " + total + " | " + percentage);
 	
 	//only add text value if it will "fit" (> 3% of the bar is filled)
 	if(percentage > 5){
-		bar.innerHTML = complete + "/" + total;
+//		bar.innerHTML = complete + "/" + total;
+		bar.innerHTML = percentage + "%";
 	}else{
 		bar.innerHTML = "";
 	}
 	//set the width of bar
 	bar.setAttribute("style", "width: " + percentage + "%");
+}
+
+function resetCardSet(){
+	//type error can be raised if the button is clicked and there is no cardset loaded
+	try{
+		currCardIndex = -1;
+		setProgressBar((currCardIndex + 1), currSet.cards.length);
+		loadCard(currSet, currCardIndex)
+	}catch(TypeError){}
 }
