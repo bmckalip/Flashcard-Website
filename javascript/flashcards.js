@@ -23,6 +23,9 @@ function loadSets(){
 }
 
 function requestSet(url){
+	if(!validateURL(url)){
+		return;
+	}
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET", url);
 	xhr.send();
@@ -33,8 +36,17 @@ function requestSet(url){
 			var cardSet = JSON.parse(xhr.responseText);
 			sets.push(cardSet);
 			addTab(cardSet);
-			
 		}
+	}
+}
+
+function validateURL(url){
+	//regular expression for api.myjson.com/bins
+	var re = /(https?:\/\/api.myjson\.com\/bins(\/[A-Za-z0-9]*))/
+	if(re.test(url)){
+		return true;
+	}else{
+		return false;
 	}
 }
 
@@ -76,8 +88,9 @@ function addListeners(){
 	//reset Button
 	document.getElementById("resetBtn").addEventListener("click", resetCardSet);
 	
-	//tab event listeners TODO: this will fail if original request for sets takes > 1 second
-	//setTimeout(addTabListeners, 1500);
+	//set submission button
+	var url = document.getElementById("setInput");
+	document.getElementById("setSubmit").addEventListener("click", function(){requestSet(url.value); url.value = "";});
 }
 
 /* ------------ card DOM manipulation functions ---------------- */
