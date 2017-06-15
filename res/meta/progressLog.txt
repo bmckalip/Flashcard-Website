@@ -26,17 +26,26 @@ what i did tusday night:
 	About me page
 		layout/style
 	fixed bug
-
-TODO webnesday night: (in order of importance)
+	
+done Wednesday:
 	About Me Page
 		content
-	add more cardsets
-		Topics:
-			java/javascript
-			lol
-	Registration Page
-		add onto login page as an expandable
 	Favorite Websites Page
 		op.gg
 		riot api site
-	add favicon
+	added favicon
+	registration page
+		layout
+		fields
+		validation
+			dynamic
+	added more cardsets (and cards)
+		Topics:
+			expand capitals to all 50
+			java/javascript
+			udyr
+	
+---------------------------------------------------------
+TODO webnesday night: (in order of importance)
+	Registration Page
+		add onto login page as an expandable

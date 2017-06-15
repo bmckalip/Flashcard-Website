@@ -2,8 +2,32 @@
    "name":"Programming",
    "cards":[
       {
-         "question":"What are the Four Pillars of Object-Oriented Programming?",
-		 "answer":"Inheritance, Polymorphism, Encapsulation, and Abstraction"
+         "question":"What is overloading?",
+		 "answer":"Two functions that have the same name but different parameters."
+      },
+	  {
+         "question":"What is overridding?",
+		 "answer":"Replacing the functionality of a method with the same name."
+      },
+	  {
+         "question":"What are the selectors in HTML/CSS?",
+		 "answer":"id, tag.elements, class"
+      },
+	  {
+         "question":"How would you access/set a state that is private?",
+		 "answer":"Use getters and setters."
+      },
+	  {
+         "question":"What is garbage collection?",
+		 "answer":"Clearing objects in memory that no longer have a reference pointing to them."
+      },
+	  {
+         "question":"What is hoisting?",
+		 "answer":"Bringing the bottom variable to the top of scope to avoid errors."
+      },
+	  {
+         "question":"What is type coercion?",
+		 "answer":"Converting the datatypes to match before comparing (==)"
       },
 	  {
          "question":"What is the difference between a POJO and a JavaBean?",
@@ -11,15 +35,91 @@
       },
 	  {
          "question":"In eclipse, how do we easily insert getters, setters, and  toSTring methods (among others)?",
-		 "answer":"Through the Source tab"
+		 "answer":"Through the source tab"
       },
 	  {
-         "question":"What is type coercion?",
-		 "answer":"Automatic Conversion of datatypes to match before comparing (==)"
+         "question":"what are the four scopes of java?",
+		 "answer":"Static/Class, Object, Function, local"
       },
 	  {
-         "question":"What is garbage collection?",
-		 "answer":"Clearing objects in memory that no longer have a reference pointing to them."
+         "question":"what are the 3 access modifiers in java, and how are they different?",
+		 "answer":"public: all classes have access, private: access is restricted to the current class, protected:classes in the same package have access"
+      },
+	  {
+         "question":"why do developers use the import statement?",
+		 "answer":"Because they’re lazy"
+      },
+	  {
+         "question":"What is the ID selector in CSS?",
+		 "answer":"We use the # symbol."
+      },
+	  {
+         "question":"How do we define bold and important text in HTML",
+		 "answer":"<strong> tag"
+      },
+	  {
+         "question":"What point is AJAX responseText ready to be handled?",
+		 "answer":"Status code 200 and readyState 4"
+      },
+	  {
+         "question":"What are two scopes of Javascript?",
+		 "answer":"Global and function"
+      },
+	  {
+         "question":"What is === operator in javascript?",
+		 "answer":" === is called as strict equality operator which returns true when the two operands are having the same value without any type conversion."
+      },
+	  {
+         "question":"What is the difference between relative and absolute path?",
+		 "answer":"Relative path is the path to the file from the file called from. While the absolute path is from the c: drive to the file needed."
+      },
+	  {
+         "question":"What is responsive design?",
+		 "answer":"Is the approach to accommodate user’s behavior and response based on screen size, orientation,and platform"
+      },
+	  {
+         "question":"What is the difference between an ide and text editor?",
+		 "answer":"An ide has a compiler and debugger while text editor does not"
+      },
+	  {
+         "question":"What is the localhost?",
+		 "answer":"your computer"
+      },
+	  {
+         "question":"What is jdbc and what is it used with?",
+		 "answer":"Jdbc is Java Database Connectivity and is used with server communicating with the database."
+      },
+	  {
+         "question":"What is the difference between abstract and concrete classes?",
+		 "answer":"Concrete classes always provide or inherit the implementation of methods, but abstract classes don’t have to provide the implementation. Abstract classes are meant to be extended."
+      },
+	  {
+         "question":"What is the difference between the ‘this’ and ‘super’ keywords?",
+		 "answer":"‘This’ refers to the current class, but ‘super’ refers to the parent of the current class."
+      },
+	  {
+         "question":"What is the string pool?",
+		 "answer":"The string pool is the location in the heap where strings are located, since they are the most used data type. When two strings with the same inside are created they both point to the same location instead of creating a new location each time."
+      },
+	  {
+         "question":"What are JVM, JRE, and JDK?",
+		 "answer":"JVM is Java Virtual Machine, it executes compiled java code.JRE is Java Runtime Environment, it contains the JVM and has extra features to execute the Java Applications. JDK is Java Development Kit , contains the essentials to code a Java Application"
+      },
+	  {
+         "question":"Why do Strings get their own dedicated portion of memory in the Heap?",
+		 "answer":"Because they are used so frequently and you want to avoid duplicates, also unlike variables portions of memory assigned to strings cannot be simply rewritten"
+      },
+	  {
+         "question":"Does Java support multiple inheritance?",
+		 "answer":"no"
+      },
+	  {
+         "question":"What is a package used for?",
+		 "answer":"To group similar code and to prevent naming conflicts from different packages"
+      }, 
+	  {
+         "question":"What is the size of a short variable?",
+		 "answer":"8-Bit Variable -127 to 126 unsigned 0 to 255 signed"
       }
-   ]
+	]
 }

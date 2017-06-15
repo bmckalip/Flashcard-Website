@@ -1,0 +1,45 @@
+{
+	"name":"Udyr",
+	"cards":[
+		{
+			"question":"What are udyr's four stances?",
+			"answer":"Tiger, Turtle, Bear, and Phoenix"
+		},
+		{
+			"question":"What role is udyr most often played in?",
+			"answer":"Jungle"
+		},
+		{
+			"question":"Is Udyr a melee or ranged champion?",
+			"answer":"melee"
+		},
+		{
+			"question":"who is the most streamer who plays udyr?",
+			"answer":"Trick2g"
+		},
+		{
+			"question":"what is a nickname for udyr?",
+			"answer":"The Godyr"
+		},
+		{
+			"question":"what style of play does udyr excel at?",
+			"answer":"Splitpushing"
+		},
+		{
+			"question":"what is considered a core item to build on udyr?",
+			"answer":"Triforce"
+		},
+		{
+			"question":"in what season was udyr the strongest?",
+			"answer":"Season 6"
+		},
+		{
+			"question":"what is the best skin for udyr?",
+			"answer":"Spirit Gaurd Udyr (SGU)"
+		},
+		{
+			"question":"should people main udyr?",
+			"answer":"no"
+		}
+	]
+}
