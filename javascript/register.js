@@ -59,22 +59,14 @@ function validateInputs(field){
 }
 
 function validatePassword(password){
-	var passLength = new RegExp("(?=.{8,})");
+	var passLength = new RegExp("(?=.{12,})");
 	var passLower = new RegExp("(?=.*[a-z])");
 	var passUpper = new RegExp("(?=.*[A-Z])");
 	var passNum = new RegExp("(?=.*[0-9])");
 	var passSpec = new RegExp("(?=.*[!@#\$%\^&\*])");
 
-	//if not 8 characters long
-	if(!passLength.test(password)){
-		setWarning("Password must be at least 8 characters long");
-		return false;
-	//if does not contain a lowercase letter
-	}else if(!passLower.test(password)){
-		setWarning("Password must contain a lowercase letter");
-		return false;
 	//if does not contain an uppercase letter
-	}else if(!passUpper.test(password)){
+	if(!passUpper.test(password)){
 		setWarning("Password must contain an uppercase letter");
 		return false;
 	//if does not contain a number
@@ -84,6 +76,14 @@ function validatePassword(password){
 	//if does not contain a special character
 	}else if(!passSpec.test(password)){
 		setWarning("Password must contain a special character");
+		return false;
+	//if not 8 characters long
+	}else if(!passLength.test(password)){
+		setWarning("Password must be at least 12 characters long");
+		return false;
+	//if does not contain a lowercase letter
+	}else if(!passLower.test(password)){
+		setWarning("Password must contain a lowercase letter");
 		return false;
 	//otherwise password is valid, return true
 	}else{
