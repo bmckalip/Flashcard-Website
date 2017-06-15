@@ -1,0 +1,60 @@
+before presentation:
+pull up login page
+pull up myJson.com
+login to riot dev site
+pull up udyr.json in notepad
+
+outline: 
+
+login page 
+registration page
+	click register to show failed case
+	register a valid user
+login page
+	login as bmc:
+		username: bmc
+		password: myPassword1!
+flashcards page
+	talk about nav bar
+	attempt to use buttons before clicking a set to show how they're disabled
+	click on a set tab
+		attempt to use buttons before clickign next to show how they're disabled
+		click next
+			flip card x3
+			discus progress bar
+		go to end of set
+			click reset
+		use both next and prev buttons
+		click new set
+			show same thing
+		show how to dynamically load new set
+			udyr url: https://api.myjson.com/bins/pd7t7
+			show same functions
+favorite websites page
+	read right side bar to explain op.gg
+	search summoner in iframe
+		bmc
+	ctrl click on riot logo to go to developer page
+		navigate to documentation
+			navigate to summonerv3
+				execute request for summoner by name
+					copy accoutn id (212549523)
+			navigate to match-v3:
+				navigate to /accountid/recent
+					paste id to pull match history
+					show off match history
+	close dev page and return to favorite websites page
+about me page
+	paraphrase about me paragraphs
+		name				Brian McKalip
+		where I'm from		North Carolina, lived in TBA for 15 years
+		school:				USF 2013-2017 graduated with BS in CS
+		HS course			Basic websites, C, Arduino
+		Minecraft Server	java plugins for bukkit, centos, community manager
+	show links
+		click linkedin, cose quickly
+		show github source code
+			navigate through source
+			show commit history
+Discuss any technologies used
+take questions
