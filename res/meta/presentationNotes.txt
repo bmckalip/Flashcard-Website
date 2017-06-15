@@ -4,8 +4,14 @@ pull up myJson.com
 login to riot dev site
 pull up udyr.json in notepad
 
-outline: 
+credentials/urls:
+username: bmc
+password: myPassword1!
+udyr cardset url: https://api.myjson.com/bins/pd7t7
+lol account id: 212549523
+github commit history: https://github.com/bmckalip/Flashcard-Website/commits/master/javascript/flashcards.js
 
+outline: 
 login page 
 registration page
 	click register to show failed case
