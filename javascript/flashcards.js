@@ -1,8 +1,8 @@
 //globals
 
 // locations of flashcard sets - add more urls to add more sets
-var urls = ["https://api.myjson.com/bins/irazv", "https://api.myjson.com/bins/pd7t7", "https://api.myjson.com/bins/f2f1n"];
-
+var urls = ["https://api.myjson.com/bins/irazv", "https://api.myjson.com/bins/f2f1n"];
+//udyr set url: https://api.myjson.com/bins/pd7t7
 //locally loaded flashcard sets
 var sets = [];
 
