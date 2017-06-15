@@ -17,7 +17,7 @@ function resetButton(){
 
 function updateButton(){
 	var xhr = new XMLHttpRequest();
-	url = "https://api.myjson.com/bins/f19dn"
+	url = "https://api.myjson.com/bins/16p58b"
 	xhr.open("GET", url);
 	var response = xhr.send();
 	
