@@ -1,8 +1,9 @@
 before presentation:
-pull up login page
-pull up myJson.com
+open login page
+open myJson.com
 login to riot dev site
-pull up udyr.json in notepad
+open udyr.json in np++
+open registration.js in np++
 
 credentials/urls:
 username: bmc
