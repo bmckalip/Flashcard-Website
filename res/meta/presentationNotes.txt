@@ -3,7 +3,7 @@ open login page
 open myJson.com
 login to riot dev site
 open udyr.json in np++
-open registration.js in np++
+open flashcards.js in np++
 
 credentials/urls:
 username: bmc
