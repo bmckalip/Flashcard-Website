@@ -1,7 +1,7 @@
 //globals
 
 // locations of flashcard sets - add more urls to add more sets
-var urls = ["https://api.myjson.com/bins/r8wjf", "https://api.myjson.com/bins/iv4cb"];
+var urls = ["https://api.myjson.com/bins/irazv", "https://api.myjson.com/bins/pd7t7", "https://api.myjson.com/bins/f2f1n"];
 
 //locally loaded flashcard sets
 var sets = [];
@@ -155,7 +155,7 @@ function setProgressBar(complete, total){
 	var percentage = complete / total * 100;
 	
 	//only add text value if it will "fit" (> 5% of the bar is filled)
-	if(percentage > 5){
+	if(percentage > 3){
 		bar.innerHTML = complete + "/" + total;
 		//bar.innerHTML = percentage + "%";
 	}else{

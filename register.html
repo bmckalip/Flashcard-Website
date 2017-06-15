@@ -20,14 +20,21 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		
 		<!-- local css (overrides bootstrap) -->
-		<link rel="stylesheet" href="css/bmcStrap.css"\>
+		<link rel="stylesheet" href="css/loginStrap.css"\>
 	</head>
 	
 	<body>
-		<div class="container">
-		
+		<div class="container-float center-block vertical-center">
+			<div class="jumbotron">
+				<div class="page-header">Register</div><br>
+				<span id="errorLabel" class="label label-default center-block"></span>
+				<input type="text" placeholder="Username" class="center-block" id="usernameInput" \>
+				<input type="text" placeholder="Email Address" class="center-block" id="emailInput" \>
+				<input type="password" placeholder="Password" class="center-block" id="passwordInput"\>
+				<input type="password" placeholder="Confirm Password" class="center-block" id="passwordConfirmInput"\>
+				<a class="btn btn-primary btn-lg center-block" href="#" role="button" id="register">Register</a><br>
+			</div>
 		</div>
-		
 		<script src="javascript/register.js"></script>
 	</body>
 </html>

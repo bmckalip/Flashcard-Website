@@ -7,20 +7,6 @@ window.onload = function(){
 	//conditionally color button when it's is clicked
 	document.getElementById("login").addEventListener("click", updateButton);
 	
-	//enter key
-	// document.getElementById('login').addEventListener("keyDown", function(e){
-        // var event = e || window.event;
-        // var charCode = event.which || event.keyCode;
-		// console.log("enter");
-        // if ( charCode == '13' ) {
-			
-            // // Enter pressed
-            // updateButton();
-            // return false;
-        // }
-    // }
-	// );
-	
 }
 
 function resetButton(){
@@ -50,7 +36,7 @@ function displayLabel(response){
 		window.location.replace("./flashcards.html");
 	}else{
 		login.setAttribute("class", "btn btn-lg btn-danger center-block");
-		login.innerHTML = "Invalid Credentials";
+		login.innerHTML = "Invalid Username or Password";
 		document.getElementById("passwordInput").value = "";
 	}
 }
