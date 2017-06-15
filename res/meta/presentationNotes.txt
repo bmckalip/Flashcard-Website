@@ -56,5 +56,6 @@ about me page
 		show github source code
 			navigate through source
 			show commit history
+				https://github.com/bmckalip/Flashcard-Website/commits/master/javascript/flashcards.js
 Discuss any technologies used
 take questions
